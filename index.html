@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Archivo', sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        header {
+            min-height: 300px;
+            width: 100%;
+            background: url("header-photo.png") #ff4900;            
+            color: #FFF;
+            text-align: center;
+        }
+
+        .brand {
+            width: 125px;
+            height: 25px;
+            margin: 0 auto; 
+            padding: 10px;        
+        }
+
+        .brand img {
+            height: 100%;
+            width: 100%;
+        }
+
+        header h1 {
+            margin-top: 40px;
+            font-size: 38px;            
+        }
+
+        header p {
+            font-size: 15px;
+            margin-top: 5px;
+            font-weight: 100;
+            opacity: .9;
+        }
+
+        .signup {
+            background: #FFF;
+            padding: .8rem 2rem;
+            border-radius: 5px;
+            margin: 3rem 0;
+            display: inline-block;
+            text-decoration: none;
+            color: #ff4900;
+            font-weight: 600;
+        }
+
+        .why-choose-us h3 {
+            font-weight: 100;
+            text-align: center;
+            line-height: 25px;    
+            padding: 40px 2rem 0 2rem;        
+        }
+
+        .why-choose-us h3 span {
+            color: #ff4900;
+        }
+
+        .options {
+            padding: 40px 2rem 0 2rem;        
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 15px;
+        }
+
+        .option .title {
+                padding: .8rem 0;
+                font-weight: bold;
+        }
+
+        .option .title img {
+            margin-right: 5px;
+        }
+
+        .option .description {
+            opacity: .8;           
+            line-height: 22px; 
+            font-size: 14px;
+        }
+
+        .features-cta {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .features-cta a {
+            background: #ff4900;
+            padding: .8rem 3.5rem;
+            border-radius: 3px;
+            margin-top: 3rem;
+            display: inline-block;
+            text-decoration: none;
+            color: #FFF;            
+        }
+
+        .script-installer {
+            background: #EEF1F4;
+            padding: 2rem;
+        }
+
+        .script-installer h3 {
+            font-weight: 100;            
+            line-height: 25px;                
+        }
+
+        .script-installer h3 b {
+            color: #ff4900;
+        }
+
+        .apps {
+            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);            
+        }
+
+        .apps .app {
+            display: flex;            
+            align-items: center;
+            justify-content: center;
+            align-items: center;
+            height: 80px;                      
+            border: 1px solid #c7cdcd;
+        }
+
+        .apps .app img {            
+            width: 15%;                   
+            margin-right: 10px;                
+        }   
+
+        .apps .app span {
+            width: 70%;
+        }
+
+        .signup-now {
+            height: 100px;
+            background: #ff4900;
+            color: #FFF;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .signup-now h2 {
+            font-size: 25px;
+        }
+
+        .signup-now .signup {
+            color: #000;
+            margin-top: 2rem;
+        }
+
+        .signup-now2 {
+            background: #ff4900;
+            color: #FFF;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .freeHosting-features {
+            padding: 2rem;            
+        }
+
+        .freeHosting-features h3 {
+            font-weight: 100;
+            text-align: center;
+            width: 70%;
+            margin: 0 auto;
+            line-height: 28px;
+        }
+
+        .freeHosting-features h3 b {
+            font-weight: bold;
+            color: #ff4900;
+        }
+
+        .freeHosting-features .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 65px;            
+            font-size: 18px;            
+        }
+
+        .freeHosting-features .features ul {
+            list-style: none;
+            margin: 3rem 0;
+        }
+
+        .freeHosting-features .features ul li {
+            line-height: 35px;
+        }
+
+        .register-for-now {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .register-for-now a {
+            background: #ff4900;
+            padding: .8rem 3.5rem;
+            border-radius: 3px;            
+            display: inline-block;
+            text-decoration: none;
+            color: #FFF;        
+        }
+
+        .footer {
+            background: #363636;
+            color: #b4b4b4;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        @media(max-width: 600px) {
+            .script-installer {
+                padding: 2rem .5rem;
+            }
+            .freeHosting-features .features {
+                grid-template-columns: 1fr;                    
+                grid-gap: 0;                
+                margin-top: 2rem;
+            }
+
+            .freeHosting-features .features ul {
+                margin: 0 0 2rem 0;
+            }
+
+            .footer {
+                padding: 1.5rem 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand"><img src="assets/Brand.png" ></div>
+            <h1>Free Unlimited Web Hosting</h1>
+            <p>Completely free website hosting with unlimited disk space</p>
+            <a href="#" class="signup">SIGN UP NOW</a>
+        </header>
+
+        <section class="why-choose-us">            
+            <h3>Free Unlimited Website Hosting for over 6 years. Learn why over <b>200,000 people choose <span>HostFree</span></b> to host their websites</h3>
+            <div class="options">
+                <div class="option">
+                    <div class="title">
+                        <img src="assets/arrow.svg">Fastest Free Hosting                        
+                    </div>
+                    <div class="description">Our hosting was independently tested and found to be the fastest free hosting in the world.</div>
+                </div>
+
+                <div class="option">
+                    <div class="title">
+                        <img src="assets/arrow.svg">99.9% Uptime                        
+                    </div>
+                    <div class="description">Uptime is our main priority, which is why we can proudly say we offer 99.9% uptime.</div>
+                </div>
+
+                <div class="option">
+                    <div class="title">
+                        <img src="assets/arrow.svg">Host Any Domain                        
+                    </div>
+                    <div class="description">Bring your own domain name or pick a free sub domain name from over 25 domain extensions.</div>
+                </div>
+
+                <div class="option">
+                    <div class="title">
+                        <img src="assets/arrow.svg">Completely Free
+                    </div>
+                    <div class="description">InfinityFree is completely free, no credit card required, no time limits and no hidden fees.</div>
+                </div>
+
+                <div class="option">
+                    <div class="title">
+                        <img src="assets/arrow.svg">No Forced Ads
+                    </div>
+                    <div class="description">Your website is your own, we will never force advertisements on your website.  </div>
+                </div>
+
+                <div class="option">
+                    <div class="title">
+                        <img src="assets/arrow.svg">Unlimited Hosting
+                    </div>
+                    <div class="description">InfinityFree is website hosting with unlimited disk space and unlimited bandwidth.</div>
+                </div>                
+            </div>
+            <div class="features-cta">
+                <a href="#">See all Hosting Features</a>
+            </div>            
+        </section>
+
+        <section class="script-installer">
+            <h3>Softaculous Script Installer. <b>400+ applications</b> with a few clicks</h3>
+            <div class="apps">
+                <div class="app">
+                    <img src="assets/wordpress.png">
+                    <span>Wordpress</span>
+                </div>
+
+                <div class="app">
+                    <img src="assets/drupal.png">
+                    <span>Drupal</span>
+                </div>
+
+                <div class="app">
+                    <img src="assets/joomla.png">
+                    <span>Joomla</span>
+                </div>
+
+                <div class="app">
+                    <img src="assets/mybb.png">
+                    <span>Mybb</span>
+                </div>
+
+                <div class="app">
+                    <img src="assets/phpbb.png">
+                    <span>Phpbb</span>
+                </div>
+
+                <div class="app">
+                    <img src="assets/pre.png">
+                    <span>Prestashop</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="signup-now2">
+            <h2>Forget the stereotypes of free hosting!</h2>
+            <a href="#" class="signup">SIGN UP NOW</a>
+        </section>
+
+        <section class="freeHosting-features">
+                <h3><b>Free Hosting Features</b> Everything you could possibly need for your website.</h3>
+                <div class="features">
+                    <ul class="right-side">
+                        <li>
+                            <img src="assets/Checkmark.svg">
+                            <span>Unlimited <b>Disk Space</b></span>
+                        </li>                        
+                        <li>
+                            <img src="assets/Checkmark.svg">
+                            <span>Unlimited <b>Bandwidth</b></span>
+                        </li>                        
+                        <li>
+                            <img src="assets/Checkmark.svg">
+                            <span><b>10 Email</b> Accounts</span>
+                        </li>                        
+                        <li>
+                            <img src="assets/Checkmark.svg">
+                            <span><b>400 MySQL</b> Databases</span>
+                        </li>                        
+                        <li>
+                            <img src="assets/Checkmark.svg">
+                            <span>PHP 5.4, 5.5, 5.6, <b>7.0</b></span>
+                        </li>                        
+                        <li>
+                            <img src="assets/Checkmark.svg">
+                            <span><b>MySQL 5.6</b></span>
+                        </li>                                                                
+                    </ul>
+                    <ul class="left-side">
+                        <li>
+                            <img src="assets/Checkmark.svg">
+                            <span><b>Apache 2.4</b> with .htaccess</span>
+                        </li>  
+                        <li>
+                            <img src="assets/Checkmark.svg">
+                            <span>Linux 3.2</span>
+                        </li>  
+                        <li>
+                            <img src="assets/Checkmark.svg">
+                            <span><b>Free Subdomain</b> Name</span>
+                        </li>  
+                        <li>
+                            <img src="assets/Checkmark.svg">
+                            <span><b>Free SSL</b> on all websites</span>
+                        </li>  
+                        <li>
+                            <img src="assets/Checkmark.svg">
+                            <span><b>Free Cloudflare</b> CDN</span>
+                        </li>  
+                        <li>
+                            <img src="assets/Checkmark.svg">
+                            <span><b>Free DNS</b> Service</span>
+                        </li>  
+                    </ul>
+                </div>
+                <div class="register-for-now">
+                    <a href="#">Register for you today</a>
+                </div>    
+        </section>
+
+        <div class="footer">
+            <div class="rights">
+                © 2018 HostFree. All rights reserved.
+            </div>
+            <div class="credit">
+                Powered by: HostFree Premium Hosting
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
